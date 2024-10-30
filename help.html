@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Оставьте письменную заявку на специалиста - сотрудника PetCook, который поможет вам подобрать правильный корм для ваших питомцев.">
+    <link rel="stylesheet" href="./assets/styles/main.css">
+    <title>PetFood - Помощь в подборе корма для питомцев</title>
+</head>
+<body>
+
+    <!-- Главный экран  -->
+    <header class="header">
+        <div class="_container header__container">
+            <div class="logo">
+                <img src="./assets/img/logo.png" alt="logo">
+                <span>PetFood</span>
+            </div>
+            <nav class="nav">
+                <ul class="nav__list">
+                    <li class="nav__element"><a href="./index.html" class="nav__link">Главная</a></li>
+                    <li class="nav__element"><a href="./order.html" class="nav__link">Заказать Корм</a></li>
+                    <li class="nav__element"><a href="./help.html" class="nav__link">Помошь</a></li>
+                </ul>
+            </nav>
+            <div class="menu">
+                <input type="checkbox" id="burger-checkbox" class="burger-checkbox">
+                <label for="burger-checkbox" class="burger"></label>
+                <ul class="menu-list">
+                    <li><a href="./index.html" class="menu-item">Главная</a></li>
+                    <li><a href="./order.html" class="menu-item">Заказать Корм</a></li>
+                    <li><a href="./help.html" class="menu-item">Помошь</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    
+    <section class="request">
+        <div class="_container request__container">
+            <h1 class="request__title">Доверьте выбор специалисту</h1>
+            <p class="request__text">
+                Если вам нужна помощь в выборе корма для
+                питомца, заполните форму и наш ветеринар свяжется с вами. Врач
+                уточнит состояние здоровья питомца, его
+                образ жизни и подберет правильное питание
+            </p>
+            <form action="SEND" class="request__form">
+                <div class="request__input-wrapper">
+                    <p>Ваше имя</p>
+                    <input id="name" class="request__input" type="text" placeholder="Введите ваше имя">
+                </div>
+                <div class="request__input-wrapper">
+                    <p>Телефон</p>
+                    <input id="phone" class="request__input" type="text" placeholder="+ 7 (___) ___ __ __">    
+                </div>
+                <div class="request__input-wrapper">
+                    <p>E-mail</p>
+                    <input id="e-mail" class="request__input" type="text" placeholder="example@mail.com">    
+                </div>
+                <div class="request__input-wrapper">
+                    <p>Для какого животного вы хотите подобрать питание?</p>
+                    <div>
+                        <input id="for-dog" class="request__input-radio" checked type="radio" name="request__input-radio"><span>Для собаки</span>
+                        <input id="for-cat" class="request__input-radio" type="radio" name="request__input-radio"><span>Для кошки</span>
+                        <input id="for-other" class="request__input-radio" type="radio" name="request__input-radio"><span>Для другого питомца</span>
+                    </div>
+                    
+                </div>
+                <div class="request__checkbox-wrapper">
+                    <input type="checkbox" checked>
+                    <span>
+                        Я согласен(а) с условиями на
+                        обработку персональных данных, правилами оказания онлайн-консультирования и 
+                        условиями договора-оферты на оказание услуг
+                    </span>
+                    
+                </div>
+                <div class="request__checkbox-wrapper">
+                    <input type="checkbox">
+                    <span>Хочу получить информацию от PetFood</span>
+                </div>
+                <a href="#" class="button request__button">Отправить</a>
+            </form>
+        </div>
+    </section>
+
+    <!-- Секция О компании  -->
+    <section class="about-company">
+        <div class="_container about-company__container">
+            <div class="about-company__text-block">
+                <h1 class="about-company__title">О компании PetFood</h1>
+                <p class="about-company__text">
+                    Lorem ipsum dolor sit amet consectetur 
+                    adipisicing elit. Praesentium quo voluptatibus sint temporibus repellendus!
+                    Debitis blanditiis cupiditate delectus officiis, voluptatibus reprehenderit
+                    ut velit atque incidunt consequuntur recusandae harum facere, doloribus sed
+                    asperiores dicta veniam quasi iure magni quae nesciunt sunt rerum.
+                    Provident eveniet veniam ratione, placeat porro sequi beatae fugit
+                    expedita illo itaque accusamus
+                    dolorum culpa voluptatem quibusdam quisquam iure.
+                    Lorem ipsum dolor sit amet consectetur 
+                    adipisicing elit. Praesentium quo voluptatibus sint temporibus repellendus!
+                    Debitis blanditiis cupiditate delectus officiis, voluptatibus reprehenderit
+                    ut velit atque incidunt consequuntur recusandae harum facere, doloribus sed
+                    asperiores dicta veniam quasi iure magni quae nesciunt sunt rerum.
+                    Provident eveniet veniam ratione, placeat porro sequi beatae fugit
+                    expedita illo itaque accusamus
+                    dolorum culpa voluptatem quibusdam quisquam iure.
+                    Lorem ipsum dolor sit amet consectetur 
+                    adipisicing elit. Praesentium quo voluptatibus sint temporibus repellendus!
+                    Debitis blanditiis cupiditate delectus officiis, voluptatibus reprehenderit
+                    ut velit atque incidunt consequuntur recusandae harum facere, doloribus sed
+                    asperiores dicta veniam quasi iure magni quae nesciunt sunt rerum.
+                    Provident eveniet veniam ratione, placeat porro sequi beatae fugit
+                    expedita illo itaque accusamus
+                    dolorum culpa voluptatem quibusdam quisquam iure.
+                </p>
+                <a href="./errorMessage.html" class="button">Узнать больше</a>
+            </div>
+            <div class="about-company__image-block">
+                <img src="./assets/img/12.jpg" alt="dog">
+            </div>
+        </div>
+    </section>
+
+    <!-- Подвал  -->
+    <footer class="footer">
+        <div class="_container footer__container">
+            <div class="footer__socials">
+                <a href="https://vk.com/club227369549">
+                    <img src="./assets/img/vk.svg" alt="vk">
+                </a>
+            </div>
+            <p class="footer__policy">Политика конфиденциальности</p>
+        </div>
+    </footer>
+
+    <!-- <script src="./assets/javascript/main.js"></script> -->
+</body>
+</html>

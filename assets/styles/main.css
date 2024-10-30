@@ -1,0 +1,773 @@
+@font-face {
+    font-family: "Inter-Bold";
+    src: url(./../fonts/Inter-Bold.ttf);
+}
+
+@font-face {
+    font-family: "Inter-ExtraBold";
+    src: url(./../fonts/Inter-ExtraBold.ttf);
+}
+
+@font-face {
+    font-family: "Inter-Medium";
+    src: url(./../fonts/Inter-Medium.ttf);
+}
+
+@font-face {
+    font-family: "Inter-Regular";
+    src: url(./../fonts/Inter-Regular.ttf);
+}
+
+.highlight {
+    background-color: yellow;
+    color: red;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Inter-Regular";
+}
+
+h1,
+h2,
+h3,
+h4.h5,
+h6,
+p {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    color: black;
+}
+
+._container {
+    padding: 0px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.burger-menu__button {
+    display: none;
+    flex-direction: column;
+    height: 70px;
+    width: 70px;
+    margin-left: auto;
+}
+
+.burger-menu__button>* {
+    width: 100%;
+    height: 20%;
+    background: #ee8208;
+}
+
+.burger-menu__button>*:not(:last-child) {
+    margin-bottom: 10px;
+}
+
+@media (min-width:700px) {
+    .menu {
+        display: none;
+    }
+}
+
+.menu {
+    z-index: 10;
+    margin-left: auto;
+}
+
+.burger-checkbox {
+    position: absolute;
+    visibility: hidden;
+}
+
+.burger {
+    position: relative;
+    z-index: 1;
+    cursor: pointer;
+    display: block;
+    position: relative;
+    border: none;
+    background: transparent;
+    width: 40px;
+    height: 26px;
+}
+
+.burger::before,
+.burger::after {
+    content: '';
+    left: 0;
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 4px;
+    border-radius: 10px;
+    background: #000;
+}
+
+.burger::before {
+    top: 0;
+    box-shadow: 0 11px 0 #000;
+    transition: box-shadow .3s .15s, top .3s .15s, transform .3s;
+}
+
+.burger::after {
+    bottom: 0;
+    transition: bottom .3s .15s, transform .3s;
+}
+
+.burger-checkbox:checked+.burger::before {
+    top: 11px;
+    transform: rotate(45deg);
+    box-shadow: 0 6px 0 rgba(0, 0, 0, 0);
+    transition: box-shadow .15s, top .3s, transform .3s .15s;
+}
+
+.burger-checkbox:checked+.burger::after {
+    bottom: 11px;
+    transform: rotate(-45deg);
+    transition: bottom .3s, transform .3s .15s;
+}
+
+.menu-list {
+    top: 0;
+    left: 0;
+    position: absolute;
+    display: grid;
+    gap: 12px;
+    padding: 42px 0;
+    margin: 0;
+    background: orange;
+    list-style-type: none;
+    transform: translateX(-100%);
+    transition: .3s;
+    width: 200px;
+}
+
+.menu-item {
+    display: block;
+    padding: 8px;
+    color: white;
+    font-size: 18px;
+    text-align: center;
+    text-decoration: none;
+}
+
+.menu-item:hover {
+    background: rgba(255, 255, 255, .2)
+}
+
+.burger-checkbox:checked~.menu-list {
+    transform: translateX(0);
+}
+
+
+/* Главный экран */
+
+.header {}
+
+.header__container {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    min-width: 70px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo>*:not(:last-child) {
+    margin-right: 20px;
+}
+
+.logo>img {
+    height: 70px;
+}
+
+.logo span {
+    font-size: 30px;
+    font-weight: 900;
+}
+
+.nav {
+    width: 70%;
+}
+
+.nav__list {
+    display: flex;
+    flex-wrap: wrap;
+    list-style-type: none;
+}
+
+.nav__list>*:not(:last-child) {
+    margin-right: 20px;
+    display: flex;
+    list-style-type: none;
+}
+
+.nav__element {}
+
+.nav__link {
+    color: #000;
+    text-decoration: none
+}
+
+.user {
+    width: 20%;
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+}
+
+.user>*:not(:last-child) {
+    margin-right: 20px;
+}
+
+.search {}
+
+.cart {}
+
+.log-in {}
+
+@media (max-width:700px) {
+    .user {
+        display: none;
+    }
+
+    .nav {
+        display: none;
+    }
+}
+
+.intro {
+    margin: 50px 0px;
+    position: relative;
+    color: #fff;
+}
+
+.intro__container {
+
+    box-sizing: border-box;
+    padding: 100px 50px;
+    background: #015fff;
+    border-radius: 30px;
+
+}
+
+.intro__title {
+    max-width: 900px;
+    font-size: 50px;
+    margin-bottom: 30px;
+}
+
+.intro__subtitle {
+    max-width: 700px;
+    margin-bottom: 50px;
+}
+
+.button {
+    font-family: "Inter-Bold";
+    display: inline-block;
+    text-decoration: none;
+    border-radius: 10px;
+    padding: 15px 30px;
+    color: #000;
+    background: #fdca40;
+}
+
+.intro__bg {
+    width: 30%;
+    z-index: 0;
+    top: 50%;
+    position: absolute;
+    left: 50%;
+}
+
+/* Секция Категории */
+
+.categories {
+    position: relative;
+    z-index: 1;
+}
+
+._categories {}
+
+.categories__container {}
+
+.categories__title {
+    padding: 20px 0px;
+    font-size: 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.categories__all {
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    flex: 25% 25% 25% 25%;
+}
+
+.categories__all>*:not(:last-child) {
+    margin-right: 20px;
+}
+
+.categories__cards {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.card {
+    border-radius: 30px;
+    display: flex;
+    align-items: flex-end;
+    padding: 20px;
+    height: 250px;
+    min-width: 250px;
+    background-image: url(./../img/4.jpg);
+    background-size: cover;
+}
+
+.card~.card {
+    background-image: url(./../img/5.jpg);
+}
+
+.card~.card~.card {
+    background-image: url(./../img/6.jpg);
+}
+
+.card~.card~.card~.card {
+    background-image: url(./../img/7.jpg);
+}
+
+.card__title {
+    border-radius: 10px;
+    background: #fdfdfd;
+    padding: 10px;
+    width: 100%;
+}
+
+
+/* Секция О нас */
+
+.about-us {
+    margin: 100px 0px;
+    color: white;
+}
+
+.about-us__container {
+    border-radius: 30px;
+    box-sizing: border-box;
+    padding: 100px;
+    background-image: url(./../img/8.jpg);
+    background-size: cover;
+    background-position-x: right;
+}
+
+.about-us__container>*:not(:last-child) {
+    margin-bottom: 50px;
+}
+
+.about-us__title {
+    max-width: 700px;
+    font-size: 32px;
+}
+
+.about-us__text {
+    max-width: 600px;
+    font-size: 14px;
+}
+
+
+/* Секция Карточка товара */
+
+
+.product-cards {}
+
+.product-cards__container {
+    display: flex;
+    flex: 30% 70%;
+}
+
+@media (max-width:700px) {
+    .product-cards__container {
+        flex: 100%;
+        flex-wrap: wrap;
+    }
+}
+
+.product-cards__images {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.product-cards__images>img {
+    max-width: 100%;
+}
+
+.product-cards__product-info {
+}
+
+.product-info {
+    margin-left: 20px;
+}
+
+.product-info__primary-info {
+    margin-bottom: 20px;
+    justify-content: space-between;
+    display: flex;
+}
+
+.primary-info__title {
+    width: 60%;
+}
+
+.primary-info__grade {
+    width: 40%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.product-info__button {
+    margin-bottom: 30px;
+}
+
+.grade {}
+
+.grade>*:not(:last-child) {
+    margin-right: 10px;
+}
+
+.grade__stars {}
+
+.grade__number {}
+
+.grade__feedback {
+    text-decoration: underline;
+}
+
+.product-info__text {
+    max-width: 700px;
+    margin-bottom: 40px;
+}
+
+.product-info__product-options {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.product-info__product-options>* {
+    width: 45%;
+    margin-bottom: 20px;
+}
+
+.product-info__option-1 {}
+
+.option-1 {}
+
+.option-1__title {}
+
+.option-1__list {
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+}
+
+.option-1__list-element {}
+
+.option-1__list>*:not(:last-child) {
+    margin-right: 10px;
+}
+
+.option-1__button {}
+
+.product-info__option-2 {}
+
+.option-2 {}
+
+.option-2__title {}
+
+.option-2__select-number {
+    display: flex;
+    align-items: center;
+}
+
+.option-2__select-number>*:not(:last-child) {
+    margin-right: 10px;
+}
+
+.option-2__select-number>input {
+    width: 30px;
+    height: 30px;
+}
+
+.product-info__option-3 {}
+
+.option-3 {
+    border-radius: 10px;
+    border: 2px solid #ebeff6;
+    padding: 10px;
+}
+
+.option-3__primary {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.option-3__price {}
+
+.option-3__text1 {
+    margin-right: 15px;
+}
+
+.option-3__text2 {}
+
+.product-info__tabs {}
+
+.tabs {}
+
+.tabs__buttons {}
+
+.tabs__button {
+    transition: 0.1s linear;
+    display: inline-block;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.tabs__button:not(.active):hover {
+    cursor: pointer;
+    color: #fdca40;
+    border: 1px solid #fdca40;
+}
+
+.tabs__button.active {
+    color: #015fff;
+    background: rgba(140, 186, 255, 0.39);
+}
+
+.tabs__info {}
+
+.tabs__text {}
+
+
+/* Секция Преимущества */
+
+.advantages {
+    margin: 50px 0px;
+    color: #fff;
+}
+
+.advantages__container {
+    box-sizing: border-box;
+    border-radius: 30px;
+    background: #015fff;
+    padding: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.advantages__header {
+    font-size: 32px;
+    margin-bottom: 50px;
+}
+
+.advantages__cards {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.advantages__advantage-card {}
+
+.advantage-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 150px;
+}
+
+.advantage-card__icon {}
+
+.advantage-card__text {
+    text-align: center;
+}
+
+/* Секция О компании */
+
+.about-company {
+    margin: 50px 0px;
+}
+
+.about-company__container {
+    display: flex;
+    gap: 30px;
+}
+
+
+
+.about-company__text-block {
+    flex-basis: 60%;
+}
+
+.about-company__title {
+    font-size: 32px;
+    font-family: "Inter-Bold";
+    margin-bottom: 20px
+}
+
+.about-company__text {
+    margin-bottom: 30px;
+}
+
+.about-company__image-block {
+    flex-basis: 40%;
+}
+
+.about-company__image-block>img {
+    width: 100%;
+}
+
+@media (max-width:990px) {
+    .about-company__container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 30px;
+    }
+
+    .about-company__image-block {
+        flex-basis: 100%;
+    }
+
+    .about-company__text-block {
+        flex-basis: 100%;
+    }
+}
+
+/* Блок с формой отправки */
+.request {
+    margin: 50px 0px;
+}
+
+.request__container {
+    box-sizing: border-box;
+    padding: 100px;
+    border-radius: 30px;
+    background: #ebeff6;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.request__container>*:not(:last-child) {
+    margin-bottom: 20px;
+}
+
+.request__title {
+    text-align: center;
+}
+
+.request__text {
+    text-align: center;
+}
+
+.request__form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.request__form>*:not(:last-child) {
+    margin-bottom: 15px;
+}
+
+.request__input-wrapper {
+}
+
+.request__input-wrapper>* {
+    display: block;
+}
+
+.request__input-wrapper>*:not(:last-child) {
+    margin-bottom: 10px;
+}
+
+.request__checkbox-wrapper {
+}
+
+.request__input {
+
+    border-radius: 15px;
+    padding: 15px;
+    border: 2px solid #ebeff6;
+    color: #ebeff6;
+    font-size: 16px;
+}
+
+.request__input-radio {}
+
+.request__button {
+    display: inline-block;
+    align-self: center;
+}
+
+/* Подвал */
+
+.footer {}
+
+._container {}
+
+.footer__container {
+    padding: 30px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.footer__copy {}
+
+.footer__socials {}
+
+.footer__socials>*:not(:last-child) {
+    margin-right: 30px;
+}
+
+.footer__policy {}
+
+.error-message {}
+
+.error-message__container {
+    display: flex;
+    justify-content: center;
+}
+
+.error-message__wrap-block {
+    max-width: 500px;
+    padding: 30px;
+    background-color: #015fff;
+    color: #fff;
+}
+
+.error-message__wrap-block>*:not(:last-child) {
+    margin-bottom: 30px
+}
+
+.error-message__header {}
+
+.error-message__phone {
+    font-size: large;
+    font-weight: 700;
+}
